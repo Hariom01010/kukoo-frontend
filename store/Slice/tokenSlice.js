@@ -3,14 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 export const authenticateSlice = createSlice({
     name: "isAuthenticate",
     initialState: {
-        value: false
+        value: [false,""]
     },
     reducers: {
-        setIsAuthenticated: state=>{
-            state.value = true
+        setIsAuthenticated: (state,action)=>{
+            state.value = [true, action.payload]
         },
         resetIsAuthenticated: state=>{
-            state.value = false
+            state.value = [false, ""]
         }
     }
 })
